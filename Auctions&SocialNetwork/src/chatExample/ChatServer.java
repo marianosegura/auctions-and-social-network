@@ -139,6 +139,7 @@ public class ChatServer extends javax.swing.JFrame implements OnCmdSocketDisconn
 
     private void sendTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendTextActionPerformed
         String message = textInput.getText().trim();
+        display(message);
         Command serverMessageCmd = new ServerMessageCmd(message);
         
         String sendName = sendNameDropdown.getSelectedItem().toString();

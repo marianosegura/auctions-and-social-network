@@ -26,6 +26,8 @@ public class ChatClient extends javax.swing.JFrame {
             if (clientName != null) {
                 cmdClient.send(new NameSocketCmd(clientName));  // name socket
                 cmdClient.send(new NotifyNamesChangeCmd());  // call to notify new name socket
+                
+                cmdClient.getCmdSocket().setName(clientName);  // name local socket
                 nameLabel.setText(clientName);
                 textInput.setText(clientName + " says hi!");
             }
@@ -143,7 +145,7 @@ public class ChatClient extends javax.swing.JFrame {
         String sendName = sendNameDropdown.getSelectedItem().toString();
         Command messageCommand = 
                 (sendName.equals("All")) ? new ClientMessageCmd(message) 
-                : new NamedClientMessageCmd(message, sendName);
+                : new NamedClientMessageCmd(message, sendName, cmdClient.getCmdSocket().getName());
         cmdClient.send(messageCommand);
     }//GEN-LAST:event_sendTextActionPerformed
 
