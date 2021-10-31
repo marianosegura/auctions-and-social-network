@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Luis Mariano Ramírez Segura
  */
-public class Main {
+public class ClientMain {
     public static void main(String args[]) {
         Object[] loginOptions = { "Auctioneer", "Bideer" };
         boolean loginAsAuctioneer = 0 == JOptionPane.showOptionDialog(null, "Login as:", "Login",
