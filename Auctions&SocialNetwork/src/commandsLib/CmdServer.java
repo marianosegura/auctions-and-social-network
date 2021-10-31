@@ -195,6 +195,11 @@ public class CmdServer {
 
     public void setRunning(boolean running) {
         this.running = running;
+    }    
+
+    
+    public boolean isRunning() {
+        return running;
     }
 }
 
