@@ -12,9 +12,11 @@ public class Main {
         boolean loginAsAuctioneer = 0 == JOptionPane.showOptionDialog(null, "Login as:", "Login",
             JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,
             null, loginOptions, loginOptions[0]);
-        
-        String nickname = JOptionPane.showInputDialog("Nickname: ");
-        
-        System.out.println(loginAsAuctioneer);
+       
+        if (loginAsAuctioneer) {
+            new AuctionForm().setVisible(true);
+        } else {
+            new BidderClient().setVisible(true);
+        }
     }
 }
