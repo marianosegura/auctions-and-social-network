@@ -70,6 +70,13 @@ public class CmdSocket {
             PrintWriter output = new PrintWriter(socket.getOutputStream());
             output.println(command.toString());
             output.flush();
+            
+            if (command.getIdentifier().equals("NAME_SOCKET")) {
+                try {
+                    Thread.sleep(100);  // sleep fraction of second to ensure remote socket naming
+                } catch (InterruptedException ex) {}
+            }
+            
         } catch (IOException e) {
             System.out.println(e);
             close();

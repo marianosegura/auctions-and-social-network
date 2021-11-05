@@ -84,9 +84,6 @@ public class BidderClient extends javax.swing.JFrame {
             
             cmdClient.send(new NameSocketCmd(bidderName));  // name remote socket
             cmdClient.getCmdSocket().setName(bidderName);  // remote local socket
-            try {
-                Thread.sleep(500);  // sleep half second to ensure remote socket naming
-            } catch (InterruptedException ex) {}
             cmdClient.send(new RequestUpdateBidderCmd(bidderName));  // request auctions
         
         } catch (IOException e) {
