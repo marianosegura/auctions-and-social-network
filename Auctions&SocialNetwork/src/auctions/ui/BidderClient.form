@@ -163,7 +163,6 @@
                                   <Component id="bidButton" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <Component id="bidAmountSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane3" min="-2" pref="350" max="-2" attributes="0"/>
                       </Group>
