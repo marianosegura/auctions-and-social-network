@@ -66,7 +66,6 @@ public class Member extends javax.swing.JFrame {
             cmdClient.send(new NameSocketCmd(nameMember));
             CmdData data = new CmdData();
             data.put("nameMember", nameMember);
-            Thread.sleep(500);
             cmdClient.send(new AddMember(data));
             this.addWindowListener(new WindowAdapter() {
                 @Override
@@ -77,9 +76,7 @@ public class Member extends javax.swing.JFrame {
             });
         } catch (IOException ex) {
             Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
 
     /**
